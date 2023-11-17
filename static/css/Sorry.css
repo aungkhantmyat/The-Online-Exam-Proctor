@@ -1,0 +1,166 @@
+/* Google Fonts - Poppins */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #e2e2e2 !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        nav {
+            display: flex;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #5f9ea0;
+            overflow: auto;
+            height: auto;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .left-links {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-links .P-title {
+            font-size: 17px;
+            font-weight: bolder;
+            margin-left: 30px;
+        }
+
+        .links {
+            display: inline-block;
+            text-align: center;
+            padding: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bolder;
+        }
+
+        section {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: #e2e2e2;
+        }
+
+        button {
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            padding: 14px 22px;
+            border: none;
+            background: #4070f4;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .modal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .modal-box {
+            width: 380px;
+            flex: 0 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            transform: scale(0.8); /* Start with a smaller scale */
+            text-align: center;
+            overflow: hidden;
+            margin: 10px; /* Add margin to prevent overlap */
+        }
+
+        .modal-box.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        .modal-box i {
+            font-size: 70px;
+            color: #4070f4;
+        }
+
+        .modal-box h2 {
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .modal-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .modal-box ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .modal-box .buttons {
+            margin-top: 25px;
+        }
+
+        .modal-box button {
+            font-size: 17px;
+            padding: 6px 12px;
+            margin: 0 10px;
+            background-color: #5f9ea0;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #5f9ea0;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .container8 {
+            max-width: 100%;
+            max-height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            font-size: 2.5vmin;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .box-footer1 {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+        }

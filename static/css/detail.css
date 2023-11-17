@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #e2e2e2;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+nav{
+    background: #5f9ea0;
+    line-height: 2;
+}
+
+nav span{
+    font-size: 30px;
+    color: #f0ecec;
+    margin-left: 30px;
+}
+
+.container{
+    margin-top: 20px;
+    border: groove 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.content{
+    text-align: center;
+    font-size: 25px;
+    line-height: 2;
+    margin-top: 20px
+}
+.features{
+    list-style-type: none;
+    font-size: 18px;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+.features li{
+    width: 100%;
+    line-height: 2;
+}
+.features li span{
+   padding: 20px;
+}
+h1{
+    margin-top: 35px;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.violation-table table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.violation-table table td,th{
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+.violation-table table tr:nth-child(even){
+    background-color: #d1cbcb;
+}

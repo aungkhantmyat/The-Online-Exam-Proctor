@@ -1,0 +1,249 @@
+/* General Settings */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Permanent+Marker&family=Redressed&family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    margin: 0;  
+    background-color: #e2e2e2;
+}
+
+a:active {
+    transform: scale(1.1);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 2.8vmin; }
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #000; }
+   
+::-webkit-scrollbar-thumb {
+    background: var(--bg-color-dark-blue); }
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-color-blue);
+}
+
+
+
+/* Variables */
+
+:root {
+    --transition-visible: transform 4s .25s cubic-bezier(0,1,.3,1), opacity .8s .25s ease-out;
+    --bg-color-blue: #3192af;
+    --bg-color-dark-blue: #06113C;
+    --bg-color-orange-9900: #ff9900;
+    --bg-color-orange-a600: #ffa600;
+    --bg-img-grad-orange: linear-gradient(35deg, #ff9900, #f0ec12);
+    --bg-img-grad-blue: linear-gradient(35deg, #486781, #1ac0cc);
+    --box-shadow-gray: 0 3px 5px 0 rgba(51, 50, 50, 0.582), 0 3px 6px 0 rgba(68, 68, 68, 0.733);
+}    
+
+/* Patterns */
+
+a {
+    text-decoration: none;
+}
+
+
+.section-header, #section-header-prof {
+    margin: auto; 
+    padding: 2.2rem 0;
+    text-align: center;
+    color: #5f9ea0;
+    font: bold 9vmin "Yanone Kaffeesatz", sans-serif;   
+}
+
+@media (max-width: 55rem) {
+    .section-header, #section-header-prof {max-width: 27rem;}
+}
+
+main{
+    margin-top: 50px;
+}
+
+/* Navigation Bar */
+
+nav{
+   display: flex;
+   position: fixed;
+   top:0;
+   width: 100%;
+   background-color: #5f9ea0;
+   overflow: auto;
+   height: auto;
+   z-index: 1;
+}
+.left-links{
+   flex:1 1 200px;
+}
+.left-links .P-title
+{
+    font-size: 17px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+.links {
+   display: inline-block;
+   text-align: center;
+   padding: 14px;
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   font-size: 17px;
+   font-weight: bolder;
+}
+.links:hover {
+   color: white;
+}
+
+
+
+/* Section: Citação */
+
+#section-citação {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+}
+
+.container1 {
+    text-align: center;
+    margin-left: 380px;
+}
+
+.quote {
+    color: black;
+    font-weight: bold;
+    font-size: 2.1vmax;
+}
+
+.author {
+    color:#33323294;    
+    font-size: 2.5vmin;
+}
+
+/* Section: Diferenciais */
+
+#section-diferenciais {
+    max-width: 60vmax;
+    margin: 0 auto 4vmax auto;
+    padding: 0 2rem;
+}
+
+@media (min-width: 40rem) {
+    .container2 {          
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 28.5vmax 28.5vmax;
+        grid-template-rows: .9fr .9fr;
+        grid-gap: 7vmax;    
+        margin: 1vmax auto;
+    }
+}
+
+.container2 > div:nth-child(n + 1):hover{
+    transform: scale(1.07);
+    box-shadow: 0 3px 5px 0 #5f9ea0, 0 3px 6px 0 #5f9ea0;
+}
+
+.box1, .box2, .box3, .box4 ,.box5,.box6{
+    color: #292727;
+    text-align: center;
+    letter-spacing: .05rem;
+    line-height: 1.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    border: .05rem solid #ccc;
+    box-shadow: var(--box-shadow-gray);
+    background-color: #fff;
+}
+
+.img-box1, .img-box2, .img-box3 ,.img-box4,.img-box5,.img-box6{
+    width: 100%;
+    height: 100%;
+}
+
+.title1 {
+    color: var(--bg-color-orange-a600);
+    font-weight: bold;
+    font-size: 1.3rem;         
+}
+
+/* Section: Professora */
+
+#section-prof {
+    max-width: 80%;
+    max-height: 70%;
+    margin: auto; 
+    display: block;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 30vmax 35vmax;
+    grid-template-rows: 1fr; 
+    text-align: center;
+    font: bold 2.7vmin Lato;     
+}
+
+
+.container3 {
+    margin: auto;    
+    padding: 3vmax;
+    line-height: 4vmin;
+    background-color: #5f9ea0;
+    
+}
+.title2 {
+    
+    font: 6vmin "Yanone Kaffeesatz", sans-serif;      
+    margin-bottom: 2vmax;    
+}
+.container3 ul li{
+    text-align: left;
+}
+.section-button{
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.next {
+  background-color: #5f9ea0;
+  color: white;
+}
+.nextButton a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
+.nextButton a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+
+/* Footer */
+
+.container8 {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 30px;
+    display: grid;    
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-color: #5f9ea0;
+    font-size: 2.5vmin;
+    font-weight: bold;
+    text-decoration: none;     
+}
+
+

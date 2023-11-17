@@ -1,0 +1,119 @@
+      /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #5f9ea0;
+  overflow: auto;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+.left-links {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+}
+
+.left-links .P-title {
+  font-size: 17px;
+  font-weight: bolder;
+  margin-left: 30px;
+  color: black; /* Text color for the title */
+}
+.sec1 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #e3f2fd;
+}
+button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: #4070f4;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button.show-modal,
+.modal-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section.active .show-modal {
+  display: none;
+}
+.overlay1 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+}
+.sec1.active .overlay1 {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: #e2e2e2;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-box i {
+  font-size: 70px;
+  color: #4070f4;
+}
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+}
+.modal-box img{
+    width: 100px;
+    margin-top: -60px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.modal-box .buttons {
+  margin-top: 25px;
+}
+.modal-box button {
+  font-size: 15px;
+  padding: 6px 12px;
+  margin: 0 10px;
+  background-color: #535151;
+  color: #e2e2e2;
+}
+audio{
+  background-color: #5f9ea0;
+  border: 2px solid #e2e2e2;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px #918d8d;
+  padding: 10px;
+}

@@ -1,0 +1,41 @@
+body{
+    background: #e2e2e2;
+}
+header{
+    background: #5f9ea0;
+}
+header nav{
+    position : fixed;
+    overflow : hidden;
+}
+header nav span{
+    font-size: 17px;
+    font-weight : bold;
+    color: white;
+    margin-left: 30px;
+}
+.card{
+    border-radius: 2em;
+    box-shadow: 0 5px 10px #5f9ea0
+}
+.card-body{
+    background:#F5F5F5;border-radius: 1em
+}
+footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-align:center;
+      text-align: center;
+      padding-top: 12px;
+      margin: auto;
+      font-size: 2.5vmin;
+      font-weight: bold;
+      background-color: #5f9ea0;
+      color: black;
+}
+
+
+
+
+

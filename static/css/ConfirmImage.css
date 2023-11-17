@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 2.8vmin; }
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #000; }
+   
+::-webkit-scrollbar-thumb {
+    background: var(--bg-color-dark-blue); }
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-color-blue);
+}
+nav{
+   display: flex;
+   position: fixed;
+   top:0;
+   width: 100%;
+   background-color: #5f9ea0;
+   overflow: auto;
+   height: auto;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 1;
+}
+.left-links{
+   flex:1 1 200px;
+   display: flex;
+   align-items: center;
+}
+.left-links .P-title
+{
+    font-size: 17px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+.links {
+   display: inline-block;
+   text-align: center;
+   padding: 14px;
+   color: #5f9ea0;
+   text-decoration: none;
+   font-size: 17px;
+   font-weight: bolder;
+}
+.container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 10px;
+
+}
+main.table {
+    width: 70vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    margin-top: 60px;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #5f9ea0;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__body {
+    width: 80%;
+    height: 70%;
+    background-color: #fffb;
+
+    margin: 1.5rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body .host-img{
+        width: 70%;
+        border-radius: 15px;
+        display: block;
+        margin: auto;
+        margin-top: 40px;
+            }
+
+.export__file {
+    position: relative;
+}
+
+.export__file .export__file-btn {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: #fff6 url("/static/img/confirm.png") center / 80% no-repeat;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.export__file .export__file-btn:hover { 
+    background-color: #fff;
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.export__file input {
+    display: none;
+}
+
+.section-button{
+    margin: auto;
+    text-align: center;
+}
+
+.next {
+  background-color: #5f9ea0;
+  color: white;
+}
+
+.button-container {
+        display: flex;
+        justify-content: space-between; /* Space between the buttons */
+        align-items: center; /* Center vertically */
+        margin-top: 20px; /* Add some margin between the container and the table footer */
+    }
+
+    .nextButton .save-button {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 30px;
+        font-size: 20px;
+        background-color: #5f9ea0; /* Background color */
+        color: white; /* Text color */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+.nextButton{
+    margin-right: 40px;
+}
+.save-button{
+    margin-left: 40px;
+}
+    .nextButton .exit-button {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 30px;
+        font-size: 20px;
+        background-color: #5f9ea0; /* Background color */
+        color: white; /* Text color */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+   
+    .nextButton .save-button:hover,
+    .nextButton .exit-button:hover {
+        background-color: #ddd; 
+        color: black;
+    }
+
+footer {
+    background-color: #5f9ea0;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container8 {
+    max-width: 100%;
+    max-height: 100%;
+    display: grid;    
+    grid-template-columns: 1fr;
+    justify-items: center;
+    font-size: 2.5vmin;
+    font-weight: bold;
+    text-decoration: none;     
+}
+
+.box-footer1 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
