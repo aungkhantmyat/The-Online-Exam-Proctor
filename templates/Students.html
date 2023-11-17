@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/TrStudent.css')}}">
+
+	<title>Admin Dashboard</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Admin Dashboard</span>
+		</a>
+		<ul class="side-menu top">
+
+			<li class="active">
+				<a href="{{url_for('adminStudents')}}">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Students</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('adminResults')}}">
+					<i class='bx bxs-graduation' ></i>
+					<span class="text">Exam Results</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('logout')}}">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<span class="text">The Online Exam Proctor</span>
+			<div>
+				<a href="#">
+					<i class='bx bxs-user' ></i>
+					<span class="text">Profile</span>
+				</a>
+			</div>
+
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+                        <li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Students</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="table-data">
+				<div class="record">
+					<div class="head">
+						<h3>Student Records</h3>
+                        <button class="btn-download" data-toggle="modal" data-target="#myModal">
+                            <i class='bx bxs-plus-circle' id="circle"></i>
+						</button>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>UserName</th>
+								<th>Email</th>
+								<th>Password</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							{% for row in students %}
+							<tr>
+								<td>{{row.0}}</td>
+								<td>{{row.1}}</td>
+								<td>{{row.2}}</td>
+								<td>{{row.3}}</td>
+								<td>
+									<a href="/updateStudent/{{row.0}}" data-toggle="modal" data-target="#modaledit{{row.0}}">
+										<i class='bx bxs-edit' style="color: #5f9ea0;"></i>
+									</a>
+									<a href="/deleteStudent/{{ row.0 }}" onclick="return confirm('Are You Sure For Delete?')">
+										<i class='bx bxs-message-square-x' style="color: #aa2e49;"></i>
+									</a>
+
+								</td>
+							</tr>
+								<div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+								   <div class="modal-dialog">
+									  <div class="modal-content" style="background : #e2e2e2;">
+										 <div class="modal-header">
+											<h4 class="modal-title">Update Information</h4>
+										 </div>
+										 <div class="modal-body">
+											<form action="{{url_for('updateStudent')}}" method="POST">
+											   <div class="form-group">
+												  <label>Name:</label>
+												   <input type="hidden"  name="id" value="{{row.0}}">
+												  <input type="text" class="form-control" name="name" value="{{row.1}}">
+											   </div>
+											   <div class="form-group">
+												  <label>Email:</label>
+												  <input type="text" class="form-control" name="email" value="{{row.2}}">
+											   </div>
+											   <div class="form-group">
+												  <label>Password:</label>
+												  <input type="password" class="form-control" name="password" value="{{row.3}}">
+											   </div>
+											   <div class="form-group">
+												  <button class="btn" style="background : #5f9ea0;" type="submit">Update</button>
+											   </div>
+											</form>
+										 </div>
+										 <div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+										 </div>
+									  </div>
+								   </div>
+								</div>
+
+						{% endfor  %}
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+<script src="{{url_for('static', filename='js/TrStudent.js')}}"></script>
+	<div id="myModal" class="modal fade" role="dialog">
+	   <div class="modal-dialog">
+		  <div class="modal-content" style="background : #e2e2e2;">
+			 <div class="modal-header">
+				<h4 class="modal-title">Add New Student</h4>
+			 </div>
+			 <div class="modal-body">
+				<form action="{{ url_for('insertStudent') }}" method="POST">
+				   <div class="form-group">
+					  <label>Name:</label>
+					  <input type="text" class="form-control" name="username" required>
+				   </div>
+					<div class="form-group">
+					  <label>Email:</label>
+					  <input type="text" class="form-control" name="email" required>
+				   </div>
+					<div class="form-group">
+					  <label>Password:</label>
+					  <input type="password" class="form-control" name="password" required>
+				   </div>
+				   <div class="form-group" >
+					  <button class="btn" style="background:#5f9ea0" type="submit">Add</button>
+				   </div>
+				</form>
+			 </div>
+			 <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+
+</body>
+</html>

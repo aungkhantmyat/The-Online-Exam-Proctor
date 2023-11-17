@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- My CSS -->
+	<link rel="stylesheet" href={{url_for('static', filename='css/StRecord.css')}}>
+
+	<title>Admin Dashboard</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Admin Dashboard</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href="{{url_for('adminStudents')}}">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Students</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="{{url_for('adminResults')}}">
+					<i class='bx bxs-graduation' ></i>
+					<span class="text">Exam Results</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('logout')}}" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<span class="text">The Online Exam Proctor</span>
+			<div>
+				<a href="#">
+					<i class='bx bxs-user' ></i>
+					<span class="text">Profile</span>
+				</a>
+			</div>
+
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Exam Results</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Exam Result Records</h3>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Date</th>
+								<th>Status</th>
+								<th>Total Mark</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for result in results %}
+							<tr>
+								<td>
+									<p>{{ result['Name'] }}</p>
+								</td>
+								<td>{{ result['Date'] }} </td>
+								<td>
+									{% set bgColor = "bg-success" if result['Status']=='Pass' else 'bg-danger'  %}
+									<p><kbd class="{{bgColor}}">{{ result['Status'] }}</kbd></p>
+								</td>
+								<td>{{ result['TotalMark'] }}% </td>
+								<td>
+									<a href="{{ url_for('adminResultDetails', resultId=result['Id']) }}">
+										<button type="button" class="btn btn-outline-info">Details</button>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+
+	<script src={{url_for('static', filename='js/TrStudent.js')}}></script>
+</body>
+</html>

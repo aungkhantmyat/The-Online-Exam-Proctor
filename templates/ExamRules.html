@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <link rel="stylesheet" href="{{url_for('static', filename='css/description.css')}}">
+      <script src="https://unpkg.com/scrollreveal"></script>  
+    
+      <title>Exam Rules and Regulations</title>
+  </head>
+
+   <body>
+    <main>
+
+      <!---Navigation Bar-->
+    <nav>
+      <div class="left-links">
+        <p class="P-title">The Online Exam Proctor</p>
+      </div>
+      <div class="right-links">
+        <a class="links" href="#section-diferenciais"> Rules</a>
+        <a class="links" href="#section-header-prof">Requirements</a>
+      </div>
+    </nav>
+
+      <!-- Section: Citação-->
+      <section id="section-citação">
+          <div class="container1">
+            <p class="quote">“As students take the test, System monitors their camera, mic and the screen they are looking at.”</p>
+            <p class="author">– Online Exam Proctor System -</p>
+          </div>
+      </section>
+
+      <!-- Section: Diferenciais-->
+      <section id="section-diferenciais">
+
+        <h2 class="section-header">Rules & Regulations</h2>
+
+        <div class="container2">
+
+          <div class="box1">
+              <div>
+                <img class="img-box1" src="{{url_for('static', filename='img/101391-online-test_zu1cw4.gif')}}" alt="image">
+              </div>
+
+              <div>
+                <p>Monitors your camera and microphone during the exam.When you load the exam, grant permissions for both to Exam Proctor.</p>
+              </div>
+          </div>
+
+          <div class="box2">
+            <div>
+              <img class="img-box2" src="{{url_for('static', filename='img/Not-detect-face.png')}}" alt="image">
+            </div>
+            <div>
+
+              <p>If the camera doesn't detect your face, System calls these events VIOLATIONS.</p>
+            </div>
+          </div>
+
+          <div class="box3">
+            <div>
+              <img class="img-box3" src="{{url_for('static', filename='img/Detect-face.png')}}" alt="image">
+            </div>
+            <div>
+              <p>During the exam, make sure the camera can focus on your face.</p>
+            </div>
+          </div>
+          <div class="box4">
+            <div>
+              <img class="img-box4" src="{{url_for('static', filename='img/Take-photo.png')}}" alt="image">
+            </div>
+            <div>
+              <p>Once your face is detected, the first photo will be taken.</p>
+            </div>
+          </div>
+
+          <div class="box5">
+            <div>
+              <img class="img-box5" src="{{url_for('static', filename='img/Detect-two-persons.png')}}" alt="image">
+            </div>
+            <div>
+              <p>Make sure that only you are in front of the exam.The background should be as clean as possible.</p>
+            </div>
+          </div>
+          <div class="box6">
+            <div>
+              <img class="img-box6" src="{{url_for('static', filename='img/Talking.png')}}" alt="image">
+            </div>
+            <div>
+              <p>You must take the exam in a quiet environment.If any sound is detected, it will be recorded.</p>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- Section: Professora-->
+      <h2 id="section-header-prof">How to setup your Environment</h2>
+      <section id="section-prof">
+
+        <div class="container3">
+            <h2 class="title2">Test environment</h2>
+            <ul>
+                <li>You must sit at a clean desk or table.</li>
+                <li>You must take the exam in the same room that you scanned during the proctoring setup for the current exam.</li>
+                <li>The room must be as quiet as possible. Sounds such as music or television are not permitted.</li>
+                <li>No other person is allowed to enter the room while you are taking the proctored exam.</li>
+                <li>The following items must not be on your desk or used during your proctored exam, unless posted rules for the exam specifically permit these materials:
+                     Books,Paper,Pens,Calculators,Textbooks,Notebooks,Phones.</li>
+            </ul>
+
+        </div>
+
+
+      </section>
+      <section class="section-button">
+        <div class="nextButton">
+        <a href="{{ url_for('faceInput') }}" class="next" >Next &raquo;</a>
+      </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container8">
+          <div>
+            <p class="box-footer1">&copy; The Online Exam Proctor System</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
+

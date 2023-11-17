@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" title="System Check">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam Face Input</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/FaceInput.css')}}">
+</head>
+
+<body>
+    <nav>
+      <div class="left-links">
+        <p class="P-title">The Online Exam Proctor</p>
+      </div>
+      <div class="right-links">
+        <a class="links" href="#"> Rules</a>
+        <a class="links" href="#">Requirements</a>
+      </div>
+    </nav>
+    <div class="container">
+    <main class="table">
+        <section class="table__header">
+            <h1>Face Input</h1>
+            <div class="export__file">
+               <label for="export-file" class="export__file-btn" title="Face Input"></label>
+                <input type="checkbox" id="export-file">
+            </div>
+        </section>
+        <section class="table__body">
+                <div>
+                   <img src="{{ url_for('video_capture') }}" width="100%" class="host-img">
+                </div>
+        </section>
+        <section class="section-button">
+            <p class="table__text">Make ensure that your face is properly positioned within the green rectangle box before capturing the photograph. </p>
+        <section class="section-button">
+        <div class="nextButton">
+        <a href="{{ url_for('saveFaceInput') }}" class="next" >Save Image</a>
+      </div>
+      </section>
+    </main>
+    <footer>
+        <div class="container8">
+          <div>
+            <p class="box-footer1">&copy; The Online Exam Proctor System</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+</body>
+
+</html>

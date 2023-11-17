@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/error.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body style="background-color: #e2e2e2;">
+    <nav>
+          <span>The Online Exam Proctor</span>
+          <a href="{{ url_for('main') }}">Logout</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img id="error" src="{{url_for('static', filename='img/error.png')}}" alt="">
+            </div>
+            <div class="col-md-9 mt-5">
+                <h1 style="margin-top: 30px;">
+                    <img id="error1" src="{{url_for('static', filename='img/error2.png')}}" alt="">
+                    System Compatibility Error
+                    <img id="error2" src="{{url_for('static', filename='img/error2.png')}}" alt="">
+                </h1>
+                <div class="pag" style="margin-top: 80px;">
+                    <p>Sorry, your computer is not compatible with taking the online exam. Please use a computer with a webcam and voice recorder. If you have any questions, please contact the exam administrator.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; The Online Exam Proctor System</p>
+    </footer>
+</body>
+</html>

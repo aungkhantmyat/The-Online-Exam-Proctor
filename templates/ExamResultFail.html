@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/Sorry.css')}}">
+</head>
+<body style="background-color: #e2e2e2;">
+
+<!-- Navigation -->
+<nav>
+    <div class="left-links">
+        <p class="P-title">The Online Exam Proctor</p>
+    </div>
+    <div class="right-links">
+        <a class="links" href="#"></a>
+         <a class="links" href="{{ url_for('main') }}">Logout</a>
+    </div>
+</nav>
+
+<section>
+     {% set result = result_status.split(';') %}
+    <span class="overlay"></span>
+    <div class="modal-container">
+          {% if result[2] == 'Fail' %}
+        <div class="modal-box">
+            <img src="{{ url_for('static', filename='img/bear.png') }}" alt="Icon" width="70" height="70" />
+            <h2>Sorry</h2>
+            <ul>
+                <li>Name: {{ result[0] }}</li>
+                <li>Test Score: {{ result[1] }}%</li>
+                 <li>Exam Status: {{ result[2] }}</li>
+                <li>Date: {{ result[3] }}</li>
+            </ul>
+            <div class="buttons">
+
+            </div>
+        </div>
+        {% else %}
+        <div class="modal-box">
+            <img src="{{ url_for('static', filename='img/tiger.png') }}" alt="Icon" width="70" height="70" />
+            <h2>You did not follow the rules.</h2>
+            <ul>
+                <li>Name: {{ result[0] }}</li>
+                <li>Test Score: {{ result[1] }}%</li>
+                 <li>Exam Status: {{ result[2] }}</li>
+                <li>Date: {{ result[3] }}</li>
+            </ul>
+            <div class="buttons">
+
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<footer>
+    <div class="container8">
+        <div>
+            <p class="box-footer1">&copy; The Online Exam Proctor System</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+    // Function to close a modal
+    const closeModal = (modal) => {
+        modal.classList.remove("show");
+    };
+
+    // Execute this code when the page finishes loading
+    window.onload = () => {
+        const modals = document.querySelectorAll(".modal-box");
+        const overlay = document.querySelector(".overlay");
+
+        modals.forEach((modal) => {
+            modal.classList.add("show");
+        });
+
+        // Close modals when clicking outside or on the "Ok, Close" button
+        overlay.addEventListener("click", () => modals.forEach(closeModal));
+        modals.forEach((modal) => {
+            modal.querySelector(".close-btn").addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent overlay click event from firing
+                closeModal(modal);
+            });
+        });
+    };
+</script>
+
+
+</body>
+</html>

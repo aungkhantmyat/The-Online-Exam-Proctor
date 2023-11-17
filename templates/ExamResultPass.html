@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/Congratulations.css')}}">
+</head>
+<body style="background-color: #e2e2e2;">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="left-links">
+            <p class="P-title">The Online Exam Proctor</p>
+        </div>
+        <div class="right-links">
+            <a class="links" href="#"></a>
+            <a class="links" href="{{ url_for('main') }}">Logout</a>
+        </div>
+    </nav>
+
+    <section>
+        {% set result = result_status.split(';') %}
+      <span class="overlay"></span>
+      <div class="modal-box" >
+        <img src="{{ url_for('static', filename='img/reward.png') }}" alt="Icon" width="70" height="70" />
+        <h2>Congratulations</h2>
+        <ul>
+          <li>Name: {{ result[0] }}</li>
+          <li>Test Score: {{ result[1] }}%</li>
+          <li>Exam Status: {{ result[2] }}</li>
+          <li>Date: {{ result[3] }}</li>
+        </ul>
+        <div class="buttons">
+        </div>
+              </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container8">
+          <div>
+            <p class="box-footer1">&copy; The Online Exam Proctor System</p>
+          </div>
+        </div>
+      </footer>
+
+
+    <script src="{{url_for('static', filename='js/confetti.js')}}"></script>
+
+    <script>
+      // Function to start the confetti
+      const startConfetti = () => {
+        confetti.start();
+      };
+
+      // Function to stop the confetti
+      const stopConfetti = () => {
+        confetti.stop();
+      };
+
+      // Execute this code when the page finishes loading
+      window.onload = () => {
+        const section = document.querySelector("section"),
+          overlay = document.querySelector(".overlay"),
+          closeBtn = document.querySelector(".close-btn");
+
+        section.classList.add("active");
+        startConfetti(); // Start confetti when the modal is displayed
+        setTimeout(stopConfetti, 3000); // Stop confetti after 5 seconds
+
+        // Close the modal when clicking outside or on the "Ok, Close" button
+        overlay.addEventListener("click", () => section.classList.remove("active"));
+        closeBtn.addEventListener("click", () => section.classList.remove("active"));
+      };
+    </script>
+</body>
+</html>

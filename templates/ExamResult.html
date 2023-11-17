@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/display.css')}}">
+
+</head>
+<body>
+        <nav class="navbar navbar-expand-md" >
+            <span class="text">The Online Exam Proctor</span>
+        </nav>
+        <div class="wrapper">
+            <!-- PRICING-TABLE CONTAINER -->
+            <div class="pricing-table group">
+                <!-- PROFESSIONAL -->
+                <div class="professional">
+                    <h1 class="title">Result</h1>
+                    <!-- CONTENT -->
+                     {% set result = result_status.split(';') %}
+                    <div class="content">
+                        <img alt="" src="{{ url_for('static', filename='Profiles/') }}{{ result[4] }}" style="width:100px">
+                    </div>
+                    <!-- /CONTENT -->
+                    <!-- FEATURES -->
+
+                    <ul class="features">
+                        <li><span>Name : </span>{{ result[0] }}</li>
+                        <li><span>Exam status : </span>{{ result[1] }}</li>
+                        <li><span>Total Mark : </span>{{ result[2] }}</li>
+                        <li><span>Date :</span>{{ result[3] }}</li>
+                    </ul>
+
+                    <!-- /FEATURES -->
+                    <!-- PT-FOOTER -->
+
+                    <!-- /PT-FOOTER -->
+                </div>
+                <!-- /PROFESSIONAL -->
+            </div>
+            <!-- /PRICING-TABLE -->
+
+        </div>
+</body>
+</html>
