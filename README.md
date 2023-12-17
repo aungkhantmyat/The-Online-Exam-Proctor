@@ -46,4 +46,5 @@ The features included in the project are as follows:
 - Run the `requirement.txt` file for the installation.
 - Run the `app.py` file.
 
-![fff](https://github.com/aungkhantmyat/The-Online-Exam-Proctor/assets/48421405/2d300585-52f4-4188-9ffb-58c5be305511)
+![fff](https://github.com/aungkhantmyat/The-Online-Exam-Proctor/assets/48421405/4721d814-7557-453e-8dc8-c792e229f937)
+
