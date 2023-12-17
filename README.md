@@ -4,7 +4,9 @@ The Online Exam Proctor System is a computer vision-based project designed to en
 
 ## The System Architecture
 
-![291000936-a48ad172-8129-4004-bc2e-9e526ad93e51](https://github.com/aungkhantmyat/The-Online-Exam-Proctor/assets/48421405/699fb49a-5750-40e6-a370-d73b8d2f594e)
+![Drawing3](https://github.com/aungkhantmyat/The-Online-Exam-Proctor/assets/48421405/d1d1673a-a11f-4adb-9eae-d32f15e647fe)
+![Drawing3 (1)](https://github.com/aungkhantmyat/The-Online-Exam-Proctor/assets/48421405/98bed9a3-6b34-4d05-b55f-4e2f3875a38b)
+
 
 ## Main Features
 The features included in the project are as follows:
